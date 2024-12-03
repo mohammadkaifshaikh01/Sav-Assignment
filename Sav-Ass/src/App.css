@@ -1,64 +1,95 @@
-.stories-container {
-  padding: 20px;
-  max-width: 100%;
-  margin: auto;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9fafb;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.stories-container {
   text-align: center;
-  
+  max-width: 800px;
+  width: 100%;
+  background: rgb(231, 183, 183);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.heading {
+  color: #1e3a8a;
+  margin-bottom: 20px;
+  font-size: 24px;
 }
 
 .search-bar {
   display: flex;
   justify-content: center;
+  gap: 10px;
   margin-bottom: 20px;
 }
 
 .search-bar input {
   padding: 10px;
-  width: 300px;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   border-radius: 4px;
-  margin-right: 10px;
+  width: 250px;
 }
 
 .search-bar button {
   padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
+  background-color: #1e3a8a;
+  color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
 .search-bar button:hover {
-  background-color: #0056b3;
+  background-color: #2563eb;
+}
+
+.recaptcha-container {
+  margin: 20px 0;
+}
+
+.load-button {
+  padding: 10px 20px;
+  background-color: #1e3a8a;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.load-button.disabled {
+  background-color: gray;
+  cursor: not-allowed;
 }
 
 .stories-list {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-top: 20px;
 }
 
 .story-card {
-  border: 1px solid #ccc;
-  padding: 10px;
+  background: #fff;
+  padding: 15px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  text-align: center;
+  border: 1px solid black;
 }
 
-.story-card h2 {
-  font-size: 18px;
-  margin-bottom: 5px;
-}
-
-.story-card p {
-  margin: 5px 0;
-}
-
-.story-card a {
-  color: blue;
-  text-decoration: underline;
+.story-card:hover {
+  transform: scale(1.05);
 }
 
 .pagination {
@@ -69,20 +100,50 @@
   margin-top: 20px;
 }
 
-.pagination button {
+.pagination-button {
   padding: 10px 20px;
-  border-radius: 4px;
-  background-color: #007bff;
-  color: #fff;
+  background-color: #1e3a8a;
+  color: white;
   border: none;
+  border-radius: 4px;
   cursor: pointer;
 }
 
-.pagination button:disabled {
-  background-color: #ddd;
+.pagination-button:disabled {
+  background-color: gray;
   cursor: not-allowed;
 }
 
-.pagination span {
+.page-info {
   font-size: 16px;
+  color: #555;
+}
+.recaptcha {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+/* Story Card Styling for Drag-and-Drop */
+.story-card {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  cursor: grab;
+}
+
+.story-card:hover {
+  background-color: #f9f9f9;
+  transform: scale(1.02);
+}
+
+.story-card:active {
+  cursor: grabbing;
+}
+
+.story-card[data-index]:hover {
+  border: 2px solid #007bff;
 }
