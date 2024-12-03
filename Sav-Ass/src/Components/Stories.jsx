@@ -92,7 +92,7 @@ const Stories = () => {
 
    return (
       <div className="stories-container">
-         <h1 className="heading">Search Hacker News Stories</h1>
+         <h1 className="heading">Search</h1>
 
          <SearchBar onSearch={handleSearch} />
          <div className="recaptcha">
