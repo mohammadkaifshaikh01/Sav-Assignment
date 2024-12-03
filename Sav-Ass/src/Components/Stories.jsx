@@ -15,7 +15,7 @@ const Stories = () => {
 
    const API = "https://hn.algolia.com/api/v1/search";
 
-   // Fetch stories from the API
+
    const fetchStories = async (query, page) => {
       try {
          setIsLoading(true);
@@ -40,7 +40,7 @@ const Stories = () => {
 
    const handleSearch = (query) => {
       setSearchQuery(query);
-      setCurrentPage(0); // Reset to the first page
+      setCurrentPage(0); 
    };
 
    const handleCaptchaChange = (value) => {
@@ -69,7 +69,7 @@ const Stories = () => {
       }
    };
 
-   // Drag-and-Drop Handlers
+
    const handleDragStart = (e, index) => {
       e.dataTransfer.setData("storyIndex", index);
    };
